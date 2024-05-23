@@ -1,0 +1,29 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+{
+    "image":"ghcr.io/uw-ssec/tutorial-scipy-2024:latest",
+  
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "ms-toolsai.jupyter",
+          "ms-python.python"
+        ]
+      },
+      "codespaces": {
+        "openFiles": [
+          "us-rse-submission-2024/README.md"
+        ]
+      }
+    },
+    "hostRequirements": {
+        "cpus": 4,
+        "memory": "16gb",
+        "storage": "32gb"
+    },
+    "containerEnv": {
+      "OLMO_MODEL_FILE": "OLMo-7B-Instruct-Q4_K_M.gguf"
+    },
+    "postCreateCommand": {
+      "install_and_download": "pip install -e '${containerWorkspaceFolder}/resources' && python -c 'import ssec_tutorials; ssec_tutorials.download_olmo_model()'"
+    }
+  }
