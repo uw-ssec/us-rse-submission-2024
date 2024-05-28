@@ -1,8 +1,38 @@
-name: ssec_project
+name: ssec-usrse2024
 channels:
-- conda-forge
+  - conda-forge
+  - defaults
 dependencies:
-- python=3.8
-- pip
-- pip:
-  - -r requirements.txt
+  - python=3.11
+  - ipykernel
+  - ipywidgets
+  - jupyterlab
+  - jupyter-server-proxy
+  - langchain>=0.1.20
+  - libopenblas
+  - tqdm
+  - fsspec
+  - gcsfs
+  - s3fs
+  - pandas
+  - streamlit
+  - panel
+  - pip
+  - pip:
+    - jupyter-panel-proxy==0.2.0a2
+    - qdrant-client
+    - sentence-transformers
+    - llama-cpp-python>=0.2.70 -C cmake.args="-DLLAMA_BLAS=ON;-DLLAMA_BLAS_VENDOR=OpenBLAS"
+    - rse-toolbox[olmo] @ git+https://github.com/uw-ssec/rse-toolbox.git
+  
+
+
+
+# name: ssec_project
+# channels:
+# - conda-forge
+# dependencies:
+# - python=3.8
+# - pip
+# - pip:
+#   - -r requirements.txt

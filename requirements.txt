@@ -2,4 +2,3 @@ requests
 pandas
 jupyter-book
 jupyterlab
-ssec_tutorials
