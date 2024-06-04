@@ -18,6 +18,9 @@ dependencies:
   - streamlit
   - panel
   - pip
+  - nltk
+  - ratelimit
+  - backoff
   - pip:
     - jupyter-panel-proxy==0.2.0a2
     - qdrant-client
